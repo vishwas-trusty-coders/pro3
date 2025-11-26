@@ -1,11 +1,5 @@
 <?php
-session_start();
-include "config/db.php";
-if (!isset($_SESSION['user_id'])) {
-    header("Location: src/auth/login.php");
-    exit;
-}
-?>
-
-<h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-<a href="src/auth/logout.php">Logout</a>
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once("./src/login.php"); ?>
